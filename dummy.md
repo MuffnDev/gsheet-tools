@@ -1,6 +1,6 @@
 # GSheet Tools - Dummy Functions
 
-## Functions
+## Functions you can use in spreadsheet
 
 ### `noop()`
 
