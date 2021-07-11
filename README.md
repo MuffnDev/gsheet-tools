@@ -75,7 +75,12 @@ Now, you can call the GSheet Tools methods directly by their names. The example 
 
 ## Documentation
 
-- [Dummy methods](./dummy.md): Few methods just meant to test if things work
+- [**Conversion**](./conversion.md): Functions for converting values
+- [**Dummy**](./dummy.md): Few functions just meant to test if things work
+- [**Random**](./random.md): Functions for working with randomization, also allow you to use seeds
+- [**Validation**](./validation.md): Functions for validating data
+
+***Bonus* : [Tips & Tricks handbook for Google Spreadsheet](./tips-and-tricks.md)**, which will be updated as we're writing the documentation.
 
 ### How to read this documentation?
 
