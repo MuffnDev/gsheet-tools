@@ -72,14 +72,16 @@ Now, you can call the GSheet Tools methods directly by their names. The example 
 
 ## Main features
 
-- Text manipulation and formatting
 - Random number generation and seeding
+- Ranges and arrays operations
+- Text manipulation and formatting
 
 ## Documentation
 
 - [**Arrays**](./conversion.md): Functions for working with ranges and JavaScript arrays
 - [**Conversion**](./conversion.md): Functions for converting values
 - [**Dummy**](./dummy.md): Few functions just meant to test if things work
+- [**Miscellaneous**](./miscellaneous.md): Useful functions that doesn't fit well in a category...
 - [**Random**](./random.md): Functions for working with randomization, also allow you to use seeds
 - [**Validation**](./validation.md): Functions for validating data
 
