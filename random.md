@@ -10,17 +10,34 @@ To get this result, we use the [`seedrandom.js` script, originally written by Da
 
 ## Functions you can use in spreadsheet
 
-### `randomInt(min, max, seed = null)`
+### `random(min = 0, max = 1, seed = null)`
 
 ```txt
+=exec("random")
+=exec("random";1;10)
+=exec("random";1;10;4321)
+```
+
+Gets a random decimal number, between a minimum (inclusive) and a maximum (inclusive).
+
+- `min: number = 0` (facultative): The minimum number (inclusive).
+- `max: number = 1` (facultative): The maximum number (inclusive).
+- `seed: any = null` (facultative): The seed to use for the random number generator. Using a seed ensures that the result won't change even if the spreadsheet is reloaded or updated.
+
+Returns the random number.
+
+### `randomInt(min = 0, max = 100, seed = null)`
+
+```txt
+=exec("randomInt")
 =exec("randomInt";1;10)
 =exec("randomInt";1;10;4321)
 ```
 
 Gets a random integer, between a minimum (inclusive) and a maximum (inclusive).
 
-- `min: number`: The minimum number (inclusive).
-- `max: number`: The maximum number (inclusive).
+- `min: number = 0` (facultative): The minimum number (inclusive).
+- `max: number = 100` (facultative): The maximum number (inclusive).
 - `seed: any = null` (facultative): The seed to use for the random number generator. Using a seed ensures that the result won't change even if the spreadsheet is reloaded or updated.
 
 Returns the random integer.

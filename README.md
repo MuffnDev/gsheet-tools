@@ -11,6 +11,8 @@ To do so in Google Spreadsheets, you have to use *Google Apps Scripts*, which al
 
 **This library adds functions to the build-in ones, provides helper function to create your own ones, and also provides custom interfaces to create new kind of controls like multi-selection dropdown, and more!**
 
+[=> See the demo GSheet file](https://docs.google.com/spreadsheets/d/1zDmaj13WSpqipvsp2zQifvE1kYUMerEtlKzeSdK1a04/edit?usp=sharing)
+
 ## Getting Started
 
 ### How to add the library to your Google Spreadsheet file
