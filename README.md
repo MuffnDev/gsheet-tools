@@ -77,6 +77,7 @@ Now, you can call the GSheet Tools methods directly by their names. The example 
 
 ## Documentation
 
+- [**Arrays**](./conversion.md): Functions for working with ranges and JavaScript arrays
 - [**Conversion**](./conversion.md): Functions for converting values
 - [**Dummy**](./dummy.md): Few functions just meant to test if things work
 - [**Random**](./random.md): Functions for working with randomization, also allow you to use seeds
