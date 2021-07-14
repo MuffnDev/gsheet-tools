@@ -74,6 +74,7 @@ Now, you can call the GSheet Tools methods directly by their names. The example 
 
 - Random number generation and seeding
 - Ranges and arrays operations
+- Doing statistics with labels instead of "just" numeric values
 - Text manipulation and formatting
 
 ## Documentation
@@ -81,8 +82,10 @@ Now, you can call the GSheet Tools methods directly by their names. The example 
 - [**Arrays**](./conversion.md): Functions for working with ranges and JavaScript arrays
 - [**Conversion**](./conversion.md): Functions for converting values
 - [**Dummy**](./dummy.md): Few functions just meant to test if things work
+- [**Math**](./math.md): Math operations that are not in built-in library or doesn't exist in JavaScript's `Math` class
 - [**Miscellaneous**](./miscellaneous.md): Useful functions that doesn't fit well in a category...
 - [**Random**](./random.md): Functions for working with randomization, also allow you to use seeds
+- [**Statistics**](./statistics.md): Functions for doing statistics
 - [**Validation**](./validation.md): Functions for validating data
 
 ***Bonus* : [Tips & Tricks handbook for Google Spreadsheet](./tips-and-tricks.md)**, which will be updated as we're writing the documentation.
@@ -107,9 +110,6 @@ If the function has input parameters, each one are detailed. In this example, yo
 - `string`: Letter or text
 - `number`: Well... a number. Note that it can be precised in the documentation if the method expects a decimal number or only an integer
 - `boolean`: A value that represents a "yes" or a "no". "Yes" value are: `TRUE`, `"true"`, `"yes"`, `"y"` and `1`. Any other value is considered as a "no"
-- `Column`: Represents a range of cells of only 1 column large
-- `Row`: Represents a range of cells of only 1 row large
-- `Range`: Represents a range of cells. By default, whatever the dimension. But the documentation may specify a number of rows or columns.
 - `...`: This symbol represents an infinity of parameters. For example, if a function has a parameter `...number`, you can pass as many numbers you want as parameters to that method (just like the `SUM()` function does!)
 - `|`: This symbol means "OR", and is meant to define several possible types for a single parameter. For example, `number|string` means that a parameter expects a number OR a text
 

@@ -2,6 +2,23 @@
 
 ## Functions you can use in spreadsheet
 
+### `contains(target, ...possibleValues)`
+
+```txt
+=exec("contains";A1;B1)
+=exec("contains";A1:A5;B1:B5)
+=exec("contains";A1:A5;B1:B5;C1:C5)
+```
+
+Checks if the given cell or range contains one of the possible values. Note that this method will search for an exact match, not a substring.
+
+In the case of a range given as target, this function will return `true` at the first occurence of the possible values.
+
+- `target: any|any[]`: The target cell or range where you want to search the occurences of the possible values.
+- `...possibleValues: any|any[]`: The list of all possible values.
+
+Returns `true` if an occurence of one of the possible values is found in the given target(s), otherwise `false`.
+
 ### `isValid(value = null, exclude0 = false)`
 
 ```txt
