@@ -11,10 +11,11 @@
   "main": "./index.js",
   "scripts": {
     "build": "node build.js && tsc && node pack.js",
+    "dev-test": "npm run build && npm run test",
     "clasp": "clasp",
     "pull": "clasp pull",
     "push": "npm run build && npm run test && clasp push",
-    "test": "node lib/tests/tests-runner.js"
+    "test": "mocha ./test"
   },
   "repository": {
     "type": "git",
