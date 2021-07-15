@@ -2,10 +2,10 @@
  * Converts the input value into a boolean.
  * Values considered true (case-insensitive): true, "y", "yes", "true", "1", 1.
  * @param {any} [value=null] The value to convert. If the value is a method, it will try to convert the returned value of that method as a boolean.
- * @return {any} Returns the converted value.
+ * @return {boolean} Returns the converted value.
  * @customfunction
  */
-function asBoolean(value = null) {
+export function asBoolean(value: any = null): boolean {
   if (typeof value === 'boolean') {
     return value;
   }
@@ -36,7 +36,7 @@ function asBoolean(value = null) {
  * @return {any} Returns the converted value.
  * @customfunction
  */
-function fromBoolean(value = null, trueValue = 1, falseValue = 0) {
+ export function fromBoolean(value: any = null, trueValue: any = 1, falseValue: any = 0): any {
   value = asBoolean(value);
   return value ? trueValue : falseValue;
 }

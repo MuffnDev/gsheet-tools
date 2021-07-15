@@ -1,5 +1,5 @@
 import assert from 'assert';
-import * as Dummy from '../lib';
+import * as Dummy from '../lib/gsheet/dummy';
 
 describe('Dummy functions', () => {
   describe('#return0()', () => {
