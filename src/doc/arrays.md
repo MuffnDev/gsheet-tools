@@ -54,4 +54,4 @@ function addStr(range, str) {
 
 ---
 
-[< Back to main page](./README.md)
+[< Back to summary](./README.md)

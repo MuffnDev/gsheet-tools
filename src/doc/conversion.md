@@ -41,4 +41,4 @@ Returns the converted value.
 
 ---
 
-[< Back to main page](./README.md)
+[< Back to summary](./README.md)

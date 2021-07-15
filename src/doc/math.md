@@ -20,4 +20,4 @@ Returns the GCD (Greatest Common Denominator) between the given numbers.
 
 ---
 
-[< Back to main page](./README.md)
+[< Back to summary](./README.md)
