@@ -1,0 +1,9 @@
+{
+  "timeZone": "Europe/Paris",
+  "addOns": {
+    "sheets": {}
+  },
+  "dependencies": {},
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}

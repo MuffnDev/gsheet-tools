@@ -2,12 +2,16 @@
   "name": "@muffin-dev/gsheet-tools",
   "version": "0.0.1",
   "description": "This library adds functions to the build-in ones, provides helper function to create your own ones, and also provides custom interfaces to create new kind of controls like multi-selection dropdown, and more!",
-  "main": "index.js",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "gsheet": "src/gsheet",
+    "lib": "src/lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clasp": "clasp",
+    "pull": "clasp pull",
+    "push": "npm run test && clasp push",
+    "test": "node lib/tests/tests-runner.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/MuffnDev/gsheet-tools/issues"
   },
-  "homepage": "https://github.com/MuffnDev/gsheet-tools#readme"
+  "homepage": "https://github.com/MuffnDev/gsheet-tools#readme",
+  "devDependencies": {
+    "@google/clasp": "^2.4.0",
+    "@muffin-dev/node-helpers": "^1.4.1"
+  }
 }
