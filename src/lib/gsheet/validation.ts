@@ -1,13 +1,16 @@
+import { flatten } from "./arrays";
+import { asBoolean } from "./conversion";
+
 /**
  * Checks if the given cell or range contains one of the possible values. Note that this method will search for an exact match, not a substring.
  * In the case of a range given as target, this function will return true at the first occurence of the possible values.
  * @param {any|any[]} target The target cell or range where you want to search the occurences of the possible values.
- * @param {any|any[]} [...possibleValues] The list of all possible values.
- * @returns Returns true if an occurence of one of the possible values is found in the given target(s), otherwise false.
+ * @param {...any} possibleValues The list of all possible values.
+ * @returns {boolean} Returns true if an occurence of one of the possible values is found in the given target(s), otherwise false.
  * @customfunction
  */
-function contains(target, ...possibleValues) {
-  if (isEmpty(target)) {
+export function contains(target: any|any[], ...possibleValues: any[]): boolean {
+  if (!isValid(target)) {
     return false;
   }
 
@@ -39,7 +42,7 @@ function contains(target, ...possibleValues) {
  * @return {any} Returns the given value depending on the state of the target cell.
  * @customfunction
  */
-function ifNotEmpty(cell, valueIfNotEmpty, valueIfEmpty = null, emptyIf0 = true) {
+export function ifNotEmpty(cell: any, valueIfNotEmpty: any, valueIfEmpty: any = null, emptyIf0 = true): any {
   emptyIf0 = asBoolean(emptyIf0);
   if (cell === null || cell === undefined || cell === '' || (emptyIf0 && cell === 0)) {
     return valueIfEmpty;
@@ -48,25 +51,25 @@ function ifNotEmpty(cell, valueIfNotEmpty, valueIfEmpty = null, emptyIf0 = true)
 }
 
 /**
- * Alias of isValid(), just for convenience in a spreadsheet context.
+ * Inverse of isValid(), just for convenience in a spreadsheet context.
  * Checks if the given value contains something. Note that this method checks for a single value, you can't use it to validate a whole range.
  * @param {any} [value=null] The value you want to check.
  * @param {boolean} [exclude0=false] By default, 0 is considered as an empty value. If this parameter is set to true, 0 is treated as not empty.
- * @return Returns true if the input value is empty, otherwise false.
+ * @return {boolean} Returns true if the input value is empty, otherwise false.
  * @customfunction
  */
-function isEmpty(value = null, exclude0 = false) {
-  return isValid(value, exclude0);
+export function isEmpty(value: any = null, exclude0 = false): boolean {
+  return !isValid(value, exclude0);
 }
 
 /**
  * Checks if the given value contains something. Note that this method checks for a single value, you can't use it to validate a whole range.
  * @param {any} [value=null] The value you want to check.
  * @param {boolean} [exclude0=false] By default, 0 is considered as a valid value. If this parameter is set to true, 0 is treated as not valid.
- * @return Returns true if the input value is valid, otherwise false.
+ * @return {boolean} Returns true if the input value is valid, otherwise false.
  * @customfunction
  */
-function isValid(value = null, exclude0 = false) {
+export function isValid(value: any = null, exclude0 = false): boolean {
   exclude0 = asBoolean(exclude0);
   return value !== undefined && value !== null && value !== '' && (!exclude0 || value !== 0);
 }
