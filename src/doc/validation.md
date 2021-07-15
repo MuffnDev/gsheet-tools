@@ -57,4 +57,4 @@ As an example, you have one cell that contain a value, and another that contain 
 
 ---
 
-[< Back to main page](./README.md)
+[< Back to summary](./README.md)

@@ -9,3 +9,7 @@ You can use checkboxes to display `true` and `false` values properly.
 ![Toolbar: Insert > Checkboxes](./images/tips-and-tricks/insert-checkboxes.png)
 
 You can use the [`asBoolean()` function](./conversion.md) of the library to convert your data into `TRUE` and `FALSE` values, so you can display them as checkboxes.
+
+---
+
+[< Back to summary](./README.md)
