@@ -19,17 +19,17 @@ To do so in Google Spreadsheets, you have to use *Google Apps Scripts*, which al
 
 1. Create a new Google Sheet file from GSheets or your GDrive (click on the *New* button, or right-click anywhere on the page)
 
-![Create a new GSheet](./images/getting-started/new-gsheet.png)
+![Create a new GSheet](./docs/images/getting-started/new-gsheet.png)
 
 2. In the *Tools* menu, click on *Scripts Editor*
 
-![Open the scripts editor](./images/getting-started/scripts-editor.png)
+![Open the scripts editor](./docs/images/getting-started/scripts-editor.png)
 
 Note that this is the editor that allow you to write your custom scripts.
 
 3. Click on the *+* icon next to the *Library* menu
 
-![Open the "Add Library" popup](./images/getting-started/open-add-library-popup.png)
+![Open the "Add Library" popup](./docs/images/getting-started/open-add-library-popup.png)
 
 4. Write the ID of the GSheetTools file in the text field, click on *Search*, select the latest version, then click on *Add*
 
@@ -37,7 +37,7 @@ Note that this is the editor that allow you to write your custom scripts.
 1rgc12nfdbRyxsOKrzqVQxWwrj3f_1o6N4eRN6UBqf4yh4l8Zy59tdc_3
 ```
 
-![Open the "Add Library" popup](./images/getting-started/add-library.png)
+![Open the "Add Library" popup](./docs/images/getting-started/add-library.png)
 
 Note that you can select a specific version, and edit it later. There's a "special" version though, `HEAD`, which is the "development" version. This version will constantly be synced with the version we're currently writing. This means you'll be constantly up to date, but keep in mind that the changes we do might alterate your document and cause errors (temporarily, don't worry) directly. We recommend you to **select the latest version** when you add the library for the first time, and **only check for an update when you want to use a function that is not in the version you're currently using**.
 
@@ -79,24 +79,24 @@ Now, you can call the GSheet Tools methods directly by their names. The example 
 
 ## Documentation
 
-- [**Arrays**](./conversion.md): Functions for working with ranges and JavaScript arrays
-- [**Conversion**](./conversion.md): Functions for converting values
-- [**Dummy**](./dummy.md): Few functions just meant to test if things work
-- [**Math**](./math.md): Math operations that are not in built-in library or doesn't exist in JavaScript's `Math` class
-- [**Miscellaneous**](./miscellaneous.md): Useful functions that doesn't fit well in a category...
-- [**Random**](./random.md): Functions for working with randomization, also allow you to use seeds
-- [**Statistics**](./statistics.md): Functions for doing statistics
-- [**Validation**](./validation.md): Functions for validating data
+- [**Arrays**](./docs/conversion.md): Functions for working with ranges and JavaScript arrays
+- [**Conversion**](./docs/conversion.md): Functions for converting values
+- [**Dummy**](./docs/dummy.md): Few functions just meant to test if things work
+- [**Math**](./docs/math.md): Math operations that are not in built-in library or doesn't exist in JavaScript's `Math` class
+- [**Miscellaneous**](./docs/miscellaneous.md): Useful functions that doesn't fit well in a category...
+- [**Random**](./docs/random.md): Functions for working with randomization, also allow you to use seeds
+- [**Statistics**](./docs/statistics.md): Functions for doing statistics
+- [**Validation**](./docs/validation.md): Functions for validating data
 
-***Bonus* : [Tips & Tricks handbook for Google Spreadsheet](./tips-and-tricks.md)**, which will be updated as we're writing the documentation.
+***Bonus* : [Tips & Tricks handbook for Google Spreadsheet](./docs/tips-and-tricks.md)**, which will be updated as we're writing the documentation.
 
 ### How to read this documentation?
 
 In the links above, you will see that methods are documented using JavaScript terms and syntaxes (even those which are only meant to be used in your spreadsheet). These terms can be confusing for non-developers, so here is a little guide about those terms.
 
-As an example, let's take the `returnParam()` function documentation, which you can find in *[Dummy methods](./dummy.md)*:
+As an example, let's take the `returnParam()` function documentation, which you can find in *[Dummy methods](./docs/dummy.md)*:
 
-![returnParam() documentation example](./images/getting-started/howto-read-docs-example.png)
+![returnParam() documentation example](./docs/images/getting-started/howto-read-docs-example.png)
 
 The title shows you the name of the function (here `returnParam()`), and the name of its eventual parameters (here `value`).
 
