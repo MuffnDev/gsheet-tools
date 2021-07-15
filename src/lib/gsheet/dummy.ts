@@ -1,29 +1,24 @@
 /**
- * Author: Hubert GROSSIN - hubert.grossin@gmail.com
- * Contains dummy methods meant to test things.
- */
-
-/**
  * Dummy function that does nothing.
  * @customfunction
  */
-function noop() { }
+export function noop(): void { }
 
 /**
  * Dummy function that returns 0.
- * @return 0
+ * @return {number} Returns 0.
  * @customfunction
  */
-function return0() {
+export function return0(): number {
   return 0;
 }
 
 /**
  * Dummy function that returns the input value.
  * @param {any} value The input value.
- * @return Returns the input value.
+ * @return {any} Returns the input value.
  * @customfunction
  */
-function returnParam(value) {
+export function returnParam(value: any): any {
   return value;
 }
