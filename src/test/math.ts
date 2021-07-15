@@ -1,7 +1,7 @@
 import assert from 'assert';
 import * as Math2 from '../lib/gsheet/math';
 
-describe('Dummy functions', () => {
+describe('Math', () => {
   describe('#gcd()', () => {
     it ('should return 1', () => {
       assert.strictEqual(Math2.gcd(1, 2, 3), 1);
