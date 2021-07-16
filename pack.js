@@ -4,11 +4,14 @@ const NodeHelpers = require('@muffin-dev/node-helpers');
 const INPUT_DIR = Path.join(__dirname, './lib/gsheet');
 const OUTPUT_DIR = Path.join(__dirname, './gsheet');
 
-const REMOVE_LINES_IF_INCLUDES = [
-  '"use strict"',
-  'Object.defineProperty(exports',
-  'exports.'
-];
+// Defines which lines should be removed from the final script export
+const DISCARD_LINES = {
+  '"use strict"': 'remove',
+  'Object.defineProperty(exports': 'remove',
+  'exports.': 'clean',
+  '@ts-ignore': 'remove',
+  'require(\'./seedrandom': 'remove'
+}
 
 const DISCLAIMERS = {
   js: `/**
@@ -37,19 +40,37 @@ const IMPORT_REGEX = /const (.+) = require/;
 
     // For each line
     for (let i = 0; i < lines.length; i++) {
-      // If the line contains one of the "remove conditions", clean it from the output
-      for (const rm of REMOVE_LINES_IF_INCLUDES) {
-        if (lines[i].includes(rm)) {
-          lines[i] = '';
+      let cancel = false;
+
+      for (const discardString of Object.keys(DISCARD_LINES)) {
+        if (lines[i].includes(discardString)) {
+          // If line should be cleaned, empty it
+          if (DISCARD_LINES[discardString] === 'clean') {
+            lines[i] = '';
+          }
+          // Else, remove it
+          else {
+            lines.splice(i, 1);
+            i--;
+          }
+
+          cancel = true;
           break;
         }
+      }
+
+      // Skip if the line has been removed or cleaned
+      if (cancel) {
+        continue;
       }
 
       // Checks if the line declares an import (which is not available in Google Apps Script, all functions are in global space)
       const match = lines[i].match(IMPORT_REGEX);
       if (match) {
         imports.push(match[1]);
-        lines[i] = '';
+        console.log('Add import', match[1]);
+        lines.splice(i, 1);
+        i--;
         continue;
       }
 
@@ -60,17 +81,6 @@ const IMPORT_REGEX = /const (.+) = require/;
         }
       }
     }
-
-    // Remove all lines before the first comment
-    // for (let i = 0; i < lines.length; i++) {
-    //   if (!lines[i].startsWith('/**')) {
-    //     lines.splice(i, 1);
-    //     i--;
-    //   }
-    //   else {
-    //     break;
-    //   }
-    // }
 
     // Adds the disclaimer for Google Apps Script export
     lines.unshift(DISCLAIMERS.js, '');
