@@ -9,6 +9,7 @@
 - [**Miscellaneous**](./miscellaneous.md): Useful functions that doesn't fit well in a category...
 - [**Random**](./random.md): Functions for working with randomization, also allow you to use seeds
 - [**Statistics**](./statistics.md): Functions for doing statistics
+- [**Text**](./text.md): Functions for text operations
 - [**Validation**](./validation.md): Functions for validating data
 
 ***Bonus* : [Tips & Tricks handbook for Google Spreadsheet](./tips-and-tricks.md)**, which will be updated as we're writing the documentation.

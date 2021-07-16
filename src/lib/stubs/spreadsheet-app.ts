@@ -12,7 +12,12 @@ export interface ISpreadsheetApp {
 export const SpreadsheetApp: ISpreadsheetApp = {
   getActiveSheet: () => {
     return {
-      getName: () => 'SpreadsheetExample'
+      getName: () => 'SpreadsheetExample',
+      getActiveCell: () => {
+        return {
+          getA1Notation: () => 'A1'
+        };
+      }
     };
   },
 
