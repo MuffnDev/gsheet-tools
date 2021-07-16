@@ -1,9 +1,9 @@
 import assert from 'assert';
 import * as Statistics from '../lib/gsheet/statistics';
 
-console.warn('@todo: Statistics script tests');
+console.warn('@todo: Text script tests');
 
-// describe('Statistics', () => {
+// describe('Text', () => {
 //   describe('#function()', () => {
 //     it('should ...', () => {
 //       

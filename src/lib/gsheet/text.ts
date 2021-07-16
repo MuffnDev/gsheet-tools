@@ -1,3 +1,5 @@
+import { forEach } from './arrays';
+
 /**
  * Converts a text into a URL-friendly slug.
  * This can be useful to deal with data with quotes, which can cause issues with GSheet.
@@ -5,7 +7,7 @@
  * @return {string} Returns the processed text.
  * @customfunction
  */
-function slug(text) {
+export function slug(text: string): string {
   return text
     // Filter string by removing spaces and force lowercase
     .trim()
@@ -24,13 +26,17 @@ function slug(text) {
 /**
  * Converts a text into a unique URL-friendly slug.
  * @param {string} text The input text to "slugify".
- * @param {any|any[]} [...ranges] The cell or range of values where to find an equivalent slug, so a unique id can be added to the result.
+ * @param {...any} ranges The cell or range of values where to find an equivalent slug, so a unique id can be added to the result.
  * @return {string} Returns the processed text.
  */
-function slugUnique(text, ...ranges) {
+export function slugUnique(text: string, ...ranges: any[]): string {
   let occurences = 0;
   const tmpSlug = slug(text);
   forEach(item => {
+    if (item === '') {
+      return '';
+    }
+    
     if (slug(item) === tmpSlug) {
       occurences++;
     }

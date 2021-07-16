@@ -3,8 +3,8 @@ import * as Random from '../lib/gsheet/random';
 
 console.warn('@todo: Random script tests');
 
-// describe('Statistics', () => {
-//   describe('#minUnits()', () => {
+// describe('Random', () => {
+//   describe('#function()', () => {
 //     it('should ...', () => {
 //       
 //     });
