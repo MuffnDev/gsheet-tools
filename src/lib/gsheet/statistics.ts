@@ -1,3 +1,8 @@
+import { flatten } from './arrays';
+import { asBoolean } from './conversion';
+import { gcd } from './math';
+import { isValid } from './validation';
+
 /**
  * Gets the label that has the minimum units.
  * @param {any[]} labels The list of labels.
@@ -6,7 +11,7 @@
  * @return Returns the label that has the minimum units.
  * @customfunction
  */
-function minUnits(labels, units, include0 = false) {
+export function minUnits(labels: any[], units: number[], include0 = false): any {
   labels = flatten(labels);
   units = flatten(units);
   include0 = asBoolean(include0);
@@ -39,7 +44,7 @@ function minUnits(labels, units, include0 = false) {
  * @return Returns the label that has the maximum units.
  * @customfunction
  */
-function maxUnits(labels, units, include0 = false) {
+export function maxUnits(labels: any[], units: number[], include0 = false): any {
   labels = flatten(labels);
   units = flatten(units);
   include0 = asBoolean(include0);
@@ -73,7 +78,7 @@ function maxUnits(labels, units, include0 = false) {
  * @return Returns the label bound to the median value of the units.
  * @customfunction
  */
-function medianUnits(labels, units, descending = false, include0 = false) {
+export function medianUnits(labels: any[], units: number[], descending = false, include0 = false): any {
   labels = flatten(labels);
   units = flatten(units);
   descending = asBoolean(include0);
