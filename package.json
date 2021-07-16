@@ -1,6 +1,6 @@
 {
   "name": "@muffin-dev/gsheet-tools",
-  "version": "1.0.8",
+  "version": "1.8.0",
   "description": "This library adds functions to the build-in ones, provides helper function to create your own ones, and also provides custom interfaces to create new kind of controls like multi-selection dropdown, and more!",
   "directories": {
     "doc": "doc",
