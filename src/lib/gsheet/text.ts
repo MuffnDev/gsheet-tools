@@ -1,4 +1,5 @@
 import { forEach } from './arrays';
+import { isValid } from './validation';
 
 /**
  * Converts a text into a URL-friendly slug.
@@ -8,6 +9,10 @@ import { forEach } from './arrays';
  * @customfunction
  */
 export function slug(text: string): string {
+  if (!isValid(text)) {
+    return '';
+  }
+
   return text
     // Filter string by removing spaces and force lowercase
     .trim()
@@ -24,24 +29,35 @@ export function slug(text: string): string {
 }
 
 /**
- * Converts a text into a unique URL-friendly slug.
- * @param {string} text The input text to "slugify".
- * @param {...any} ranges The cell or range of values where to find an equivalent slug, so a unique id can be added to the result.
- * @return {string} Returns the processed text.
+ * Converts the data in the given range into slugs, as a 1D array.
+ * @param {...any} ranges The cell or ranges of values to convert into slugs.
+ * @return {string[]} Returns a 1D array with the processed data.
+ * @customfunction
  */
-export function slugUnique(text: string, ...ranges: any[]): string {
-  let occurences = 0;
-  const tmpSlug = slug(text);
-  forEach(item => {
-    if (item === '') {
+export function slugAll(...ranges: any[]): string[] {
+  return forEach(item => {
+    return slug(item);
+  }, ...ranges);
+}
+
+/**
+ * Converts the data in the given range into unique slugs, as a 1D array. If several values ha the same slug, this function adds a -X
+ * suffix to it, where X is the number of occurencies.
+ * @param {...any} ranges The cell or range of values to convert into unique slugs.
+ * @returns {string[]} Returns a 1D array with the processed data.
+ * @customfunction
+ */
+export function slugAllUnique(...ranges: any[]): string[] {
+  const occurrences = new Map<string, number>();
+
+  return forEach(item => {
+    if (!isValid(item)) {
       return '';
     }
-    
-    if (slug(item) === tmpSlug) {
-      occurences++;
-    }
-  }, ranges);
 
-  occurences--;
-  return occurences > 0 ? `${tmpSlug}-${occurences}` : tmpSlug;
+    let itemSlug = slug(item);
+    let nbOccurrences = occurrences.get(itemSlug) || 0;
+    occurrences.set(itemSlug, nbOccurrences + 1);
+    return nbOccurrences > 0 ? `${itemSlug}-${nbOccurrences}` : itemSlug;
+  }, ...ranges);
 }
