@@ -84,4 +84,4 @@ const randomNumber = rng(); // This value will always be the same if you use it 
 
 ---
 
-[< Back to main page](./README.md)
+[< Back to summary](./README.md)
