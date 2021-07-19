@@ -68,7 +68,6 @@ const IMPORT_REGEX = /const (.+) = require/;
       const match = lines[i].match(IMPORT_REGEX);
       if (match) {
         imports.push(match[1]);
-        console.log('Add import', match[1]);
         lines.splice(i, 1);
         i--;
         continue;

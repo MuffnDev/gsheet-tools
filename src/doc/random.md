@@ -44,7 +44,7 @@ Returns the random integer.
 
 ## Methods to use only for your own custom functions
 
-### `RandomHelpers.getSeedA1String(seed = null)`
+### `getSeedA1String(seed = null)`
 
 Gets the string to use as a seed for the active sheet and cell.
 
@@ -52,7 +52,7 @@ Gets the string to use as a seed for the active sheet and cell.
 
 Returns the seed string for the active cell. You can use this value with `Math.seedrandom()`. Note that `seedA1Rnd()` will do this for you.
 
-### `RandomHelpers.seedRNG(seed = null)`
+### `seedRNG(seed = null)`
 
 Gets the predictable random number generator method based on the given seed. Note that this RNG will be "reseeded" when you use this method.
 
@@ -63,11 +63,11 @@ Returns the RNG as a function.
 #### `seedRNG()` Usage example
 
 ```js
-const rng = RandomHelpers.seedRNG('custom seed');
+const rng = seedRNG('custom seed');
 const randomNumber = rng(); // This value is always 0.5510932294
 ```
 
-### `RandomHelpers.seedA1RNG(seed = null)`
+### `seedA1RNG(seed = null)`
 
 Gets the predictable random number generator method, based on the given seed and the active cell. Note that this RNG will be "reseeded" when you use this method.
 
@@ -78,7 +78,7 @@ Returns the RNG as a function.
 #### `seedA1RNG()` Usage example
 
 ```js
-const rng = RandomHelpers.seedA1RNG('custom seed');
+const rng = seedA1RNG('custom seed');
 const randomNumber = rng(); // This value will always be the same if you use it in tha A1 cell of a sheet with a same name
 ```
 
