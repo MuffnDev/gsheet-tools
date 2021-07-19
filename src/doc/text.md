@@ -63,11 +63,14 @@ If the input range is valid, it returns an object that summarizes the range. Oth
 
 ```txt
 {
-  sheet: string|undefined - The name of the target sheet if given
   col1: string - The column letter of the first coordinate
   row1: number - The row number of the first coordinate
+  coord1: string - The full A1 notation of the first coordinate (col1 + row1)
   col2: string|undefined - The column letter of the second coordinate if given
   row2: number|undefined - The row number of the second coordinate if given
+  coord2: string - The full A1 notation of the second coordinate (col2 + row2)
+  range: string - The full range, without sheet name (coord1:coord2)
+  sheet: string|undefined - The name of the target sheet if given
 }
 ```
 

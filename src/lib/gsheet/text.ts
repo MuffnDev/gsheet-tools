@@ -11,21 +11,29 @@ const A1_NOTATION_REGEX = /(?:'?(?<sheet>.[^']+)'?!)?(?:(?<col1>[A-Za-z]+)(?<row
  * coordinates, and finally "sheet" that contains the eventual name of the sheet targetted by this range. Note that if second corrdinates
  * or sheet name is not given in the input range, the properties are undefined.
  */
-export function parse11Notation(range: string) {
+export function parseA1Notation(range: string) {
   if (!isValid(range)) {
     return null;
   }
 
   const match = range.match(A1_NOTATION_REGEX);
   if (match) {
-    if (match.groups.row1) {
-      match.groups.row1 = (parseInt(match.groups.row1, 10) || 1) as unknown as string;
+    const output: any = match.groups;
+
+    output.row1 = (parseInt(match.groups.row1, 10) || 1) as unknown as string;
+    output.coord1 = output.col1 + output.row1;
+    output.range = output.coord1;
+
+    if (output.row2) {
+      output.row2 = (parseInt(match.groups.row2, 10) || 1) as unknown as string;
+      output.coord2 = output.col2 + output.row2;
+      output.range += ':' + output.coord2;
     }
-    if (match.groups.row2) {
-      match.groups.row2 = (parseInt(match.groups.row2, 10) || 1) as unknown as string;
-    }
+
+    return output;
   }
-  return match ? match.groups : null;
+
+  return null;
 }
 
 /**
