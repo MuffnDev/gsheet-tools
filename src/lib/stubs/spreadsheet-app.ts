@@ -3,13 +3,17 @@
  */
 export interface ISpreadsheetApp {
   getActiveSheet: () => any;
+  getActiveSpreadsheet: () => any;
   getActiveRange: () => any;
+  openById: (sheetId: string) => any;
 }
 
 /**
  * @const {ISpreadsheetApp} SpreadsheetApp Import this value to emulate a SpreadsheetApp global accessor in a GSheet script.
  */
 export const SpreadsheetApp: ISpreadsheetApp = {
+  openById: (sheetId: string) => { },
+
   getActiveSheet: () => {
     return {
       getName: () => 'SpreadsheetExample',
@@ -20,6 +24,8 @@ export const SpreadsheetApp: ISpreadsheetApp = {
       }
     };
   },
+
+  getActiveSpreadsheet: () => { },
 
   getActiveRange: () => {
     return {
