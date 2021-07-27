@@ -31,7 +31,7 @@ export function seedRNG(seed: any = null): () => any {
  * @param {any} [seed=null] The seed to use. If null given, uses the default seed.
  * @return {function} Returns the RNG as a function.
  */
-export function seedA1RNG(seed: any = null) {
+export function seedA1RNG(seed: any = null): () => number {
   // @ts-ignore
   return new Math.seedrandom(getSeedA1String(seed));
 }

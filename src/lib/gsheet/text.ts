@@ -1,6 +1,41 @@
 import { forEach } from './arrays';
 import { isValid } from './validation';
 
+const A1_NOTATION_REGEX = /(?:'?(?<sheet>.[^']+)'?!)?(?:(?<col1>[A-Za-z]+)(?<row1>[0-9]+))(?::(?<col2>[A-Za-z]+)(?<row2>[0-9]+))?/;
+
+/**
+ * Extracts the informations from a given range with A1 notation (eg. "A1", "A1:C5", "Sheet!A1", "'Example Sheet'!A1:C5", ...).
+ * @param range The range you want to parse (eg. "A1", "A1:C5", "Sheet!A1", "'Example Sheet'!A1:C5", ...).
+ * @returns {object|null} If the input range is valid, it returns an object that summarizes the range. Properties are: "col1" and "row1",
+ * respectively the letter of the column and the number of the row of the first coordinate, "col2" and "row2" for eventual second
+ * coordinates, and finally "sheet" that contains the eventual name of the sheet targetted by this range. Note that if second corrdinates
+ * or sheet name is not given in the input range, the properties are undefined.
+ */
+export function parseA1Notation(range: string) {
+  if (!isValid(range)) {
+    return null;
+  }
+
+  const match = range.match(A1_NOTATION_REGEX);
+  if (match) {
+    const output: any = match.groups;
+
+    output.row1 = (parseInt(match.groups.row1, 10) || 1) as unknown as string;
+    output.coord1 = output.col1 + output.row1;
+    output.range = output.coord1;
+
+    if (output.row2) {
+      output.row2 = (parseInt(match.groups.row2, 10) || 1) as unknown as string;
+      output.coord2 = output.col2 + output.row2;
+      output.range += ':' + output.coord2;
+    }
+
+    return output;
+  }
+
+  return null;
+}
+
 /**
  * Converts a text into a URL-friendly slug.
  * This can be useful to deal with data with quotes, which can cause issues with GSheet.

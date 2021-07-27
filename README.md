@@ -13,7 +13,7 @@ To do so in Google Spreadsheets, you have to use *Google Apps Scripts*, which al
 
 [=> See the demo GSheet file](https://docs.google.com/spreadsheets/d/1zDmaj13WSpqipvsp2zQifvE1kYUMerEtlKzeSdK1a04/edit?usp=sharing)
 
-[=> Go to the Documentation Summary](./src/doc/summary)
+[=> Go to the Documentation Summary](./src/doc/README.md)
 
 ## Getting Started
 

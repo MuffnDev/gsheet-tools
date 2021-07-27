@@ -20,6 +20,7 @@ const OUT_DIR = Path.join(__dirname, './');
   ////////////////////////////////////////
 
   await NodeHelpers.removeDirectory('./doc', true);
+  await NodeHelpers.removeDirectory('./gsheet', true);
   await NodeHelpers.removeDirectory('./lib', true);
   await NodeHelpers.removeDirectory('./test', true);
 
